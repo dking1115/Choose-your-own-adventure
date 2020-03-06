@@ -37,35 +37,37 @@ def villager():
 def RPS():
     inp=int(input("Choose 1:Rock 2:Paper 3:Scissors"))
     out=random.randint(1,3)
-    if out==1 & inp==1:
+    if (out==1 & inp==1):
         print("Its a Draw")
         RPS()
-    elif out==1 & inp==2:
+    elif (out==1 & inp==2):
         print("You Won")
         Fork()
-    elif out ==1 & inp==3:
+    elif (out ==1 & inp==3):
         print("You Lose")
         Fork()
-    elif out ==2 & inp==1:
+    elif (out ==2 & inp==1):
         print("You Win")
         Fork()
-    elif out==2 & inp==2:
+    elif (out==2 & inp==2):
         print("Its a Draw")
         RPS()
-    elif out ==2 & inp==3:
+    elif (out ==2 & inp==3):
         print("you Lose")
         Fork()
-    elif out == 3 & inp==1:
+    elif (out == 3 & inp==1):
         print("You Lose")
         Fork()
-    elif out == 3 & inp==2:
+    elif (out == 3 & inp==2):
         print("You Win")
         Fork()
-    elif out == 3 & inp==3:
+    elif (out == 3 & inp==3):
         print("Its A Draw")
         RPS()
     else:
+        print("Error")
         RPS()
+        
 
 
 def Hobbit():
