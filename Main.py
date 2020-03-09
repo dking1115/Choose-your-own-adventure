@@ -4,11 +4,13 @@ def name():
     Fork()
 
 def randout():
-    out=random.randint(1,2)
+    out=random.randint(1,3)
     if out==1:
         villager()
     elif out == 2:
         Hobbit()
+    elif out == 3:
+        Doors()
 
 
 def Fork():
@@ -21,6 +23,17 @@ def Fork():
         print("You have gone Left")
         randout()
 
+def Doors():
+    print("you have entered a room with lots of doors")
+    inp=int(input("Which door will you choose?:1,2,3"))
+    if(inp==1):
+        print("There is a monster")
+        attacked("Monster")
+    elif(inp==2):
+        print("There is an exit")
+        Fork()
+    else:
+        villager()
 def villager():
     print("You have come to a Villager who wants to your food")
     out=int(input("Will you give Him food? 0:No, 1:Yes"))
@@ -66,7 +79,8 @@ def RPS():
         RPS()
     else:
         print("Error")
-        RPS()
+        #RPS()
+        Fork()
         
 
 
