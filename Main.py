@@ -111,7 +111,7 @@ def attacked(Attacker):
             Fork()
 
 def killed(Attacker):
-    print("You were killed by {Attacker}")
+    print(f"You were killed by {Attacker}")
 
 def fighting(Attacker):
     print(f"You are fighting a {Attacker}")
@@ -134,7 +134,7 @@ def dragon():
 def lava():
     print("There is a pool of lava, walk carefully so that you do not fall in")
     inp=random.randint(1,10)
-    if inp=1:
+    if inp==1:
         print("you have fallen in")
         killed("Lava")
     else:
