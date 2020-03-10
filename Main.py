@@ -4,13 +4,19 @@ def name():
     Fork()
 
 def randout():
-    out=random.randint(1,3)
+    out=random.randint(1,6)
     if out==1:
         villager()
     elif out == 2:
         Hobbit()
     elif out == 3:
         Doors()
+    elif out == 4:
+        dragon()
+    elif out == 5:
+        lava()
+    elif out ==6:
+        cliff()
 
 
 def Fork():
@@ -50,31 +56,31 @@ def villager():
 def RPS():
     inp=int(input("Choose 1:Rock 2:Paper 3:Scissors"))
     out=random.randint(1,3)
-    if (out==1 & inp==1):
+    if (out==1 and inp==1):
         print("Its a Draw")
         RPS()
-    elif (out==1 & inp==2):
+    elif (out==1 and inp==2):
         print("You Won")
         Fork()
-    elif (out ==1 & inp==3):
+    elif (out ==1 and inp==3):
         print("You Lose")
         Fork()
-    elif (out ==2 & inp==1):
+    elif (out ==2 and inp==1):
         print("You Win")
         Fork()
-    elif (out==2 & inp==2):
+    elif (out==2 and inp==2):
         print("Its a Draw")
         RPS()
-    elif (out ==2 & inp==3):
+    elif (out ==2 and inp==3):
         print("you Lose")
         Fork()
-    elif (out == 3 & inp==1):
+    elif (out == 3 and inp==1):
         print("You Lose")
         Fork()
-    elif (out == 3 & inp==2):
+    elif (out == 3 and inp==2):
         print("You Win")
         Fork()
-    elif (out == 3 & inp==3):
+    elif (out == 3 and inp==3):
         print("Its A Draw")
         RPS()
     else:
@@ -93,6 +99,7 @@ def attacked(Attacker):
     out=int(input("0:Fight,1:Run"))
     if out==0:
         print("You are fighting")
+        fighting()
         
     else: 
         print("You are running")
@@ -114,4 +121,45 @@ def fighting(Attacker):
     else:
         Fork()
 
+def dragon():
+    print("You have come upon a dragon, walk quietly so it does not see you")
+    inp=random.randint(1,3)
+    if inp==1:
+        print("The Dragon has seen you and is attacking")
+        attacked("Dragon")
+    else:
+        print("You have made it out alive")
+        Fork()
+
+def lava():
+    print("There is a pool of lava, walk carefully so that you do not fall in")
+    inp=random.randint(1,10)
+    if inp=1:
+        print("you have fallen in")
+        killed("Lava")
+    else:
+        print("You made it")
+        Fork()
+
+def cliff():
+    print("You have come to a cliff")
+    inp=int(input("Will you climb over it:1 or go arround it:2"))
+    if inp==1:
+        print("You are climbing over, be careful")
+        out=random.randint(1,3)
+        if out==1:
+            print("you made it over")
+            Fork()
+        else:
+            print("you fell back to the ground")
+            cliff()
+    else:
+        print("you are going arround")
+        out=random.randint(1,3)
+        if out ==1:
+            print("you went the wrong way")
+            cliff()
+        else:
+            print("You made it arround")
+            Fork()
 name()
